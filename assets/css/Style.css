@@ -1,0 +1,641 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.outfit-900 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.outfit-700 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.outfit-500 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.outfit-400 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.outfit-300 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "header" "info" "main" "banner2" "footer";
+  grid-template-rows: 50px 675px 1fr 500px 300px;
+}
+body header {
+  grid-area: header;
+  background-color: white;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+body header .menu_desktop {
+  display: none;
+}
+body header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 23px;
+}
+body header .brand .nav {
+  display: flex;
+}
+body header .brand .nav input[type=checkbox] {
+  display: none;
+}
+body header .brand .nav #menu_mobile:checked ~ .header_nav {
+  transform: translateX(0);
+}
+body header .brand .nav .header_nav {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  left: 0;
+  width: 100vw;
+  height: 95vh;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in-out;
+  justify-content: center;
+  align-items: top;
+}
+body header .brand .nav .header_nav .header_menu {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 15px;
+}
+body header .brand .nav .header_nav .header_menu li {
+  height: 100px;
+  width: 350px;
+  border: solid 2px black;
+}
+body header .brand .nav .header_nav .header_menu li p {
+  font-size: 40px;
+}
+body header .brand .nav .header_nav .header_menu .menu_juegos {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/games.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body header .brand .nav .header_nav .header_menu .menu_suscription {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/eaplaymenu.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body header .brand .nav .header_nav .header_menu .menu_novedades {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/novedades.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body header .brand .nav .header_nav .header_menu .menu_acerca {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/acercade.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body header .brand .nav .header_nav .header_menu .menu_ayuda {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/ayuda.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body header .brand .logo {
+  height: 15px;
+}
+body header .brand .logo img {
+  height: 100%;
+}
+body .icons {
+  display: flex;
+  gap: 20px;
+}
+body i {
+  font-size: 15px;
+}
+
+.info {
+  grid-area: info;
+  background-color: rgb(32, 32, 32);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.info .game {
+  display: flex;
+  height: 300px;
+}
+.info .game img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 100%;
+}
+.info .banner1 {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 375px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.info .banner1 .nfs {
+  width: 365px;
+  height: 165px;
+}
+.info .banner1 .nfs img {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.info .banner1 .nfs img:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+}
+.info .banner1 p {
+  text-align: center;
+  font-size: 15px;
+}
+.info .banner1 a {
+  transition: all 4s ease-in-out;
+}
+.info .banner1 button {
+  color: white;
+  height: 50px;
+  width: 365px;
+  border: solid 2px white;
+  background-color: transparent;
+}
+.info .banner1 button:hover {
+  font-size: 18px;
+  color: rgb(8, 245, 0);
+  background-color: white;
+}
+
+main {
+  grid-area: main;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+main .title {
+  margin-top: 35px;
+  width: 365px;
+}
+main .title h1 {
+  text-align: center;
+}
+main .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .cards .card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 365px;
+  height: 365px;
+}
+main .cards .ufc5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/ufc5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .cards .ufc5 .logo_marca {
+  width: 174px;
+  height: 44px;
+}
+main .cards .ufc5 .logo_marca img {
+  height: 100%;
+  width: 100%;
+}
+main .cards .fc24 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/fc24.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main .cards .fc24 .logo_marca {
+  width: 174px;
+  height: 44px;
+}
+main .cards .fc24 .logo_marca img {
+  height: 100%;
+  width: 100%;
+}
+main .cards .f123 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/f123.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .cards .f123 .logo_marca {
+  width: 174px;
+  height: 44px;
+}
+main .cards .f123 .logo_marca img {
+  height: 100%;
+  width: 100%;
+}
+main .cards .nfsub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/nfsub.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .cards .nfsub .logo_marca {
+  width: 174px;
+  height: 44px;
+}
+main .cards .nfsub .logo_marca img {
+  height: 100%;
+  width: 100%;
+}
+main .cards .sims4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/sims4.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .cards .sims4 .logo_marca {
+  width: 174px;
+  height: 44px;
+}
+main .cards .sims4 .logo_marca img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .cards .apex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/apex.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+main .cards .apex .logo_marca {
+  width: 174px;
+  height: 44px;
+}
+main .cards .apex .logo_marca img {
+  height: 100%;
+  width: 100%;
+}
+main .cards .logo_marca:hover {
+  transform: scale(1.5);
+  transition: all 0.5s ease-in-out;
+}
+main button {
+  background-color: transparent;
+  border: solid 2px black;
+  margin-bottom: 30px;
+  width: 365px;
+  height: 50px;
+  font-size: 15px;
+}
+main button:hover {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+}
+
+.banner2 {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  grid-area: banner2;
+  background: linear-gradient(to right, blue, rgba(255, 0, 0, 0.699));
+  padding: 15px;
+  gap: 15px;
+}
+.banner2 .games {
+  width: 100%;
+  height: 200px;
+}
+.banner2 .games img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+}
+.banner2 .eaplay {
+  margin-inline: 17px;
+  width: 240px;
+  height: 100px;
+  position: relative;
+}
+.banner2 .eaplay img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.banner2 .suscription {
+  margin-inline: 17px;
+}
+.banner2 .button_suscription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zoom-in-out 1s ease-in-out infinite alternate;
+}
+.banner2 .button_suscription button {
+  color: white;
+  width: 365px;
+  height: 50px;
+  font-size: 15px;
+  background-color: transparent;
+  border: solid 2px white;
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(216, 216, 216);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+}
+footer .logo_ea {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+}
+footer .logo_ea img {
+  width: 100%;
+  height: 100%;
+  animation: loading 1s infinite linear;
+}
+footer .footer_menu {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+footer .redes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer .redes_icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+@keyframes zoom-in-out {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes loading {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  body {
+    display: grid;
+    grid-template-areas: "header header" "info info" "main main" "banner2 banner2" "footer footer";
+    grid-template-rows: 50px 300px 1fr 500px 300px;
+    grid-template-columns: 1fr 1fr;
+  }
+  body header .menu_desktop {
+    display: none;
+  }
+  body .info {
+    background-color: rgb(32, 32, 32);
+    background-image: url(../img/banner1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    align-items: end;
+  }
+  body .info .game {
+    display: none;
+  }
+  body .info .banner1 {
+    width: 365px;
+  }
+  body .info .banner1 .nfs {
+    width: 315px;
+    height: 115px;
+  }
+  body .info .banner1 .nfs img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  body .info .banner1 p {
+    text-align: center;
+    font-size: 12px;
+  }
+  body .info .banner1 button {
+    height: 50px;
+    width: 165px;
+  }
+  body main .cards {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  body main .cards .card {
+    width: 300px;
+    height: 300px;
+  }
+  body .banner2 .suscription {
+    width: 300px;
+  }
+  body .banner2 .button_suscription {
+    margin-left: 15px;
+    width: 300px;
+  }
+  body .banner2 .button_suscription button {
+    width: 150px;
+    height: 35px;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    display: grid;
+    grid-template-areas: "header header" "info info" "main main" "banner2 banner2" "footer footer";
+    grid-template-rows: 50px 300px 1fr 500px 300px;
+    grid-template-columns: 1fr 1fr;
+  }
+  body header .brand .nav i {
+    display: none;
+  }
+  body header .menu_desktop {
+    display: flex;
+  }
+  body header .menu_desktop .menu_desktop-main {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 15px;
+  }
+  body header .menu_desktop .menu_desktop-main li button {
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  body header .menu_desktop .menu_desktop-main li button:hover {
+    color: white;
+    background-color: black;
+  }
+  body .info {
+    background-color: rgb(32, 32, 32);
+    background-image: url(../img/banner1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    align-items: end;
+  }
+  body .info .game {
+    display: none;
+  }
+  body .info .banner1 {
+    width: 365px;
+  }
+  body .info .banner1 .nfs {
+    width: 315px;
+    height: 115px;
+  }
+  body .info .banner1 .nfs img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  body .info .banner1 p {
+    text-align: center;
+    font-size: 12px;
+  }
+  body .info .banner1 button {
+    height: 50px;
+    width: 165px;
+  }
+  body main .cards {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  body main .cards .card {
+    width: 300px;
+    height: 300px;
+  }
+  body .banner2 .games {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body .banner2 .suscription {
+    width: 500px;
+  }
+  body .banner2 .button_suscription {
+    margin-left: 15px;
+    width: 300px;
+  }
+  body .banner2 .button_suscription button {
+    width: 150px;
+    height: 35px;
+  }
+  body footer .inicio_button {
+    display: flex;
+    justify-content: end;
+    margin-right: 15px;
+  }
+  body footer .inicio_button i {
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=Style.css.map */

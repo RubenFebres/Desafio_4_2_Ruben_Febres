@@ -1,0 +1,756 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$tablet: "768px";
+$desktop: "992px";
+
+// <uniquifier>: Use a unique and descriptive class name
+.outfit-900 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.outfit-700 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.outfit-500 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.outfit-400 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.outfit-300 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "info"
+    "main"
+    "banner2"
+    "footer";
+  grid-template-rows: 50px 675px 1fr 500px 300px;
+
+  header {
+    grid-area: header;
+    background-color: #ffff;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+
+    .menu_desktop {
+      display: none;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 23px;
+
+      .nav {
+        display: flex;
+
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        #menu_mobile:checked ~ .header_nav {
+          transform: translateX(0);
+        }
+
+        .header_nav {
+          display: flex;
+          position: absolute;
+          top: 100%;
+          background-color: #ffff;
+          left: 0;
+          width: 100vw;
+          height: 95vh;
+          transform: translateX(-100%);
+          transition: all 0.5s ease-in-out;
+          justify-content: center;
+          align-items: top;
+
+          .header_menu {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 15px;
+
+            li {
+              height: 100px;
+              width: 350px;
+              border: solid 2px black;
+
+              p {
+                font-size: 40px;
+              }
+            }
+
+            .menu_juegos {
+              color: #ffffff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-image: url(../img/games.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+            }
+            .menu_suscription {
+              color: #ffff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-image: url(../img/eaplaymenu.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+
+            .menu_novedades {
+              color: #ffffff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-image: url(../img/novedades.png);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+            .menu_acerca {
+              color: #ffffff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-image: url(../img/acercade.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+
+            .menu_ayuda {
+              color: #ffffff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-image: url(../img/ayuda.png);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+        }
+      }
+      .logo {
+        height: 15px;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    gap: 20px;
+  }
+
+  i {
+    font-size: 15px;
+  }
+}
+
+.info {
+  grid-area: info;
+  background-color: rgb(32, 32, 32);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .game {
+    display: flex;
+    height: 300px;
+
+    img {
+      object-fit: cover;
+      width: 100vw;
+      height: 100%;
+    }
+  }
+
+  .banner1 {
+    color: #ffff;
+    display: flex;
+    flex-direction: column;
+    height: 375px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    .nfs {
+      width: 365px;
+      height: 165px;
+
+      img {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      img:hover {
+        transform: scale(1.2);
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 15px;
+    }
+
+    a {
+      transition: all 4s ease-in-out;
+    }
+
+    button {
+      color: #ffff;
+      height: 50px;
+      width: 365px;
+      border: solid 2px #ffff;
+      background-color: transparent;
+    }
+
+    button:hover {
+      font-size: 18px;
+      color: rgb(8, 245, 0);
+      background-color: #ffff;
+    }
+  }
+}
+
+main {
+  grid-area: main;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .title {
+    margin-top: 35px;
+    width: 365px;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .card {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 365px;
+      height: 365px;
+    }
+    .ufc5 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../img/ufc5.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .logo_marca {
+        width: 174px;
+        height: 44px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .fc24 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../img/fc24.webp);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      .logo_marca {
+        width: 174px;
+        height: 44px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .f123 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../img/f123.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .logo_marca {
+        width: 174px;
+        height: 44px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .nfsub {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../img/nfsub.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .logo_marca {
+        width: 174px;
+        height: 44px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .sims4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../img/sims4.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .logo_marca {
+        width: 174px;
+        height: 44px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .apex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../img/apex.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      .logo_marca {
+        width: 174px;
+        height: 44px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .logo_marca:hover {
+      transform: scale(1.5);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: solid 2px black;
+    margin-bottom: 30px;
+    width: 365px;
+    height: 50px;
+    font-size: 15px;
+  }
+  button:hover {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+  }
+}
+
+.banner2 {
+  color: #ffff;
+  display: flex;
+  flex-direction: column;
+  grid-area: banner2;
+  background: linear-gradient(to right, blue, rgba(255, 0, 0, 0.699));
+  padding: 15px;
+  gap: 15px;
+
+  .games {
+    width: 100%;
+    height: 200px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      opacity: 0.6;
+    }
+  }
+
+  .eaplay {
+    margin-inline: 17px;
+    width: 240px;
+    height: 100px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .suscription {
+    margin-inline: 17px;
+  }
+
+  .button_suscription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: zoom-in-out 1s ease-in-out infinite alternate;
+
+    button {
+      color: white;
+      width: 365px;
+      height: 50px;
+      font-size: 15px;
+      background-color: transparent;
+      border: solid 2px #ffff;
+    }
+  }
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(216, 216, 216);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+
+  .logo_ea {
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      animation: loading 1s infinite linear;
+    }
+  }
+  .footer_menu {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .redes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .redes_icons {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+  }
+}
+
+@keyframes zoom-in-out {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes loading {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: $tablet) and (max-width: $desktop) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "info info"
+      "main main"
+      "banner2 banner2"
+      "footer footer";
+    grid-template-rows: 50px 300px 1fr 500px 300px;
+    grid-template-columns: 1fr 1fr;
+
+    header {
+      .menu_desktop {
+        display: none;
+      }
+    }
+
+    .info {
+      background-color: rgb(32, 32, 32);
+      background-image: url(../img/banner1.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      align-items: end;
+
+      .game {
+        display: none;
+      }
+
+      .banner1 {
+        width: 365px;
+
+        .nfs {
+          width: 315px;
+          height: 115px;
+
+          img {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+        p {
+          text-align: center;
+          font-size: 12px;
+        }
+
+        button {
+          height: 50px;
+          width: 165px;
+        }
+      }
+    }
+    main {
+      .cards {
+        display: grid;
+        grid-template-columns: auto auto;
+
+        .card {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+
+    .banner2 {
+      .suscription {
+        width: 300px;
+      }
+      .button_suscription {
+        margin-left: 15px;
+        width: 300px;
+        button {
+          width: 150px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "info info"
+      "main main"
+      "banner2 banner2"
+      "footer footer";
+    grid-template-rows: 50px 300px 1fr 500px 300px;
+    grid-template-columns: 1fr 1fr;
+
+    header {
+      .brand {
+        .nav {
+          i {
+            display: none;
+          }
+        }
+      }
+      .menu_desktop {
+        display: flex;
+
+        .menu_desktop-main {
+          display: flex;
+          flex-direction: row;
+          list-style: none;
+          gap: 15px;
+
+          li {
+            button {
+              border: none;
+              background-color: transparent;
+              font-size: 15px;
+              border-radius: 10px;
+              padding: 15px;
+            }
+            button:hover {
+              color: #ffff;
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
+    .info {
+      background-color: rgb(32, 32, 32);
+      background-image: url(../img/banner1.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      align-items: end;
+
+      .game {
+        display: none;
+      }
+
+      .banner1 {
+        width: 365px;
+
+        .nfs {
+          width: 315px;
+          height: 115px;
+
+          img {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+        p {
+          text-align: center;
+          font-size: 12px;
+        }
+
+        button {
+          height: 50px;
+          width: 165px;
+        }
+      }
+    }
+    main {
+      .cards {
+        display: grid;
+        grid-template-columns: auto auto;
+
+        .card {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+
+    .banner2 {
+      .games {
+        object-fit: cover;
+      }
+      .suscription {
+        width: 500px;
+      }
+      .button_suscription {
+        margin-left: 15px;
+        width: 300px;
+        button {
+          width: 150px;
+          height: 35px;
+        }
+      }
+    }
+    footer {
+      .inicio_button {
+        display: flex;
+        justify-content: end;
+        margin-right: 15px;
+
+        i {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
